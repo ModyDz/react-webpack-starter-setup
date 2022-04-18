@@ -4,19 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=production webpack"
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mui/icons-material": "^5.6.1",
-    "@mui/material": "^5.6.1",
-    "@mui/styled-engine-sc": "^5.6.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "styled-components": "^5.3.5"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -28,11 +24,8 @@
     "@babel/runtime": "^7.17.9",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
-    "@types/styled-components": "^5.1.25",
     "babel-loader": "^8.2.4",
-    "babel-plugin-styled-components": "^2.0.7",
     "clean-webpack-plugin": "^4.0.0",
-    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
