@@ -5,7 +5,16 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].[contenthash].js",
+  },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        defaultVendors: { idHint: "vendors" },
+      },
+    },
   },
   mode: process.env.NODE_ENV,
   module: {
@@ -35,6 +44,7 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
+    alias: { "@mui/styled-engine": "@mui/styled-engine-sc" },
   },
   plugins: [
     new HtmlWebpackPlugin({
