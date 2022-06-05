@@ -51,11 +51,4 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
-  devServer: {
-    static: path.join(__dirname, "./src"),
-    port: 3000,
-    hot: "only",
-    compress: true,
-    open: false,
-  },
 };
